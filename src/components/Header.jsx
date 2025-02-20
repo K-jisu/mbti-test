@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="bg-primary-color p-4 shadow-md">
+    <header className=" p-4 shadow-md">
       <nav className="container mx-auto flex justify-between items-center text-white">
-        <Link to="/" className="text-lg font-semibold text-[#ff5a5f]">
+        <Link to="/" className="text-primary-color font-semibold">
           홈
         </Link>
         <div className="space-x-4">
-          <Link to="/login" className="hover:text-gray-300 text-[#ff5a5f]">
+          <Link to="/login" className="text-primary-color hover:text-gray-300 ">
             로그인
           </Link>
-          <Link to="/signup" className="hover:text-gray-300 text-[#ff5a5f]">
+          <Link
+            to="/signup"
+            className="text-primary-color hover:text-gray-300 "
+          >
             회원가입
           </Link>
         </div>
