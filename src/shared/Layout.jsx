@@ -1,12 +1,15 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "../components/Common/Header";
+import { Outlet } from "react-router-dom";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <>
       <div className="h-full bg-gray-100 flex flex-col justify-between">
         <Header />
-        <main className="container mx-auto pt-10 main">{children}</main>
+        <main className="container mx-auto pt-10 main">
+          <Outlet />
+        </main>
       </div>
     </>
   );
