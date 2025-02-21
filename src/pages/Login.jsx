@@ -4,8 +4,13 @@ import AuthForm from "../components/Auth/AuthForm";
 import AuthInput from "../components/Auth/AuthInput";
 import AuthBtn from "../components/Auth/AuthBtn";
 import { login } from "../api/auth";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthProvider";
 
 const Login = () => {
+  const naigate = useNavigate();
+  const {accessLogin} = useContext(AuthContext)
   const [loginData, setLoginData] = useState({
     id: "",
     password: "",
@@ -21,10 +26,11 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      await login(loginData);
-      console.log("로그인 성공");
+      const { accessToken } = await login(loginData);
+      accessLogin(accessToken);
+      naigate("/profile");
     } catch (error) {
-      console.log("로그인에 실패");
+      console.log("로그인에 실패",error);
     }
   };
 

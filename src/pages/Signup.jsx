@@ -5,6 +5,7 @@ import AuthInput from "../components/Auth/AuthInput";
 import AuthBtn from "../components/Auth/AuthBtn";
 import { useState } from "react";
 import { register } from "../api/auth";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [signUpData, setSighUpData] = useState({
@@ -12,6 +13,7 @@ const Signup = () => {
     password: "",
     nickname: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,6 +27,7 @@ const Signup = () => {
     try {
       const { message } = await register(signUpData);
       console.log(message);
+      navigate("/login");
     } catch (error) {
       console.log("회원가입 오류", error);
     }
