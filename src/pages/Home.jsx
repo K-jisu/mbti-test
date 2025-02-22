@@ -1,6 +1,5 @@
-import React from "react";
 import HomeCard from "../components/Home/HomeCard";
-import HomeConstant from "../components/Home/Constant/HomeConstant";
+import HomeConstant from "../constant/HomeConstant";
 
 const Home = () => {
   return (
