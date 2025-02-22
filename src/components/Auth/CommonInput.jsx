@@ -1,6 +1,4 @@
-import React from "react";
-
-const AuthInput = ({ type, name, value, placeholder, onChange }) => {
+const CommonInput = ({ type, name, value, placeholder, onChange }) => {
   return (
     <input
       className="w-full p-4 border border-gray-300 rounded-lg"
@@ -13,4 +11,4 @@ const AuthInput = ({ type, name, value, placeholder, onChange }) => {
   );
 };
 
-export default AuthInput;
+export default CommonInput;

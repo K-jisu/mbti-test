@@ -1,6 +1,4 @@
-import React from "react";
-
-const AuthContainer = ({ children }) => {
+const CommonContainer = ({ children }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
       {children}
@@ -8,4 +6,4 @@ const AuthContainer = ({ children }) => {
   );
 };
 
-export default AuthContainer;
+export default CommonContainer;
