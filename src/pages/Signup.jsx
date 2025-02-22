@@ -1,11 +1,10 @@
-import React from "react";
-import AuthContainer from "../components/Auth/AuthContainer";
-import AuthForm from "../components/Auth/AuthForm";
-import AuthInput from "../components/Auth/AuthInput";
-import AuthBtn from "../components/Auth/AuthBtn";
 import { useState } from "react";
 import { register } from "../api/auth";
 import { useNavigate } from "react-router-dom";
+import CommonContainer from "../components/Auth/CommonContainer";
+import CommonForm from "../components/Auth/CommonForm";
+import CommonInput from "../components/Auth/CommonInput";
+import CommonBtn from "../components/Auth/CommonBtn";
 
 const Signup = () => {
   const [signUpData, setSighUpData] = useState({
@@ -35,31 +34,31 @@ const Signup = () => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-gray-100">
-      <AuthContainer>
+      <CommonContainer>
         <h1 className="text-4xl font-bold mb-6 text-center">회원가입</h1>
-        <AuthForm onSubmit={handleRegister}>
-          <AuthInput
+        <CommonForm onSubmit={handleRegister}>
+          <CommonInput
             type="text"
             name="id"
             value={signUpData.id}
             onChange={handleChange}
             placeholder="아이디"
           />
-          <AuthInput
+          <CommonInput
             type="password"
             name="password"
             onChange={handleChange}
             placeholder="비밀번호"
           />
-          <AuthInput
+          <CommonInput
             type="text"
             name="nickname"
             onChange={handleChange}
             placeholder="닉네임"
           />
-          <AuthBtn content="회원가입" type="submit" />
-        </AuthForm>
-      </AuthContainer>
+          <CommonBtn content="회원가입" type="submit" />
+        </CommonForm>
+      </CommonContainer>
     </div>
   );
 };

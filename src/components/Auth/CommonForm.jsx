@@ -1,6 +1,4 @@
-import React from "react";
-
-const AuthForm = ({ children, onSubmit }) => {
+const CommonForm = ({ children, onSubmit }) => {
   return (
     <form
       className="space-y-6 bg-gray-50 p-6 rounded-lg shadow-md"
@@ -14,4 +12,4 @@ const AuthForm = ({ children, onSubmit }) => {
   );
 };
 
-export default AuthForm;
+export default CommonForm;

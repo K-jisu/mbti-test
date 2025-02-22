@@ -1,16 +1,16 @@
 import { useState } from "react";
-import AuthContainer from "../components/Auth/AuthContainer";
-import AuthForm from "../components/Auth/AuthForm";
-import AuthInput from "../components/Auth/AuthInput";
-import AuthBtn from "../components/Auth/AuthBtn";
 import { login } from "../api/auth";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
+import CommonContainer from "../components/Auth/CommonContainer";
+import CommonForm from "../components/Auth/CommonForm";
+import CommonInput from "../components/Auth/CommonInput";
+import CommonBtn from "../components/Auth/CommonBtn";
 
 const Login = () => {
   const naigate = useNavigate();
-  const {accessLogin} = useContext(AuthContext)
+  const { accessLogin } = useContext(AuthContext);
   const [loginData, setLoginData] = useState({
     id: "",
     password: "",
@@ -30,32 +30,32 @@ const Login = () => {
       accessLogin(accessToken);
       naigate("/profile");
     } catch (error) {
-      console.log("로그인에 실패",error);
+      console.log("로그인에 실패", error);
     }
   };
 
   return (
     <div className="w-full flex flex-col items-center justify-center bg-gray-100">
-      <AuthContainer>
+      <CommonContainer>
         <h1 className="text-3xl font-bold text-primary-color mb-6">로그인</h1>
-        <AuthForm onSubmit={handleLogin}>
-          <AuthInput
+        <CommonForm onSubmit={handleLogin}>
+          <CommonInput
             type="text"
             name="id"
             value={loginData.id}
             onChange={handleChange}
             placeholder="아이디를 입력하세요"
           />
-          <AuthInput
+          <CommonInput
             type="password"
             name="password"
             value={loginData.password}
             onChange={handleChange}
             placeholder="비밀번호를 입력하세요"
           />
-          <AuthBtn content="로그인" />
-        </AuthForm>
-      </AuthContainer>
+          <CommonBtn content="로그인" />
+        </CommonForm>
+      </CommonContainer>
     </div>
   );
 };
