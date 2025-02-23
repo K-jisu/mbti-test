@@ -1,9 +1,43 @@
-import React from 'react';
+import React from "react";
+import CommonContainer from "../components/Common/CommonContainer";
+import CommonForm from "../components/Common/CommonForm";
+import CommonInput from "../components/Common/CommonInput";
+import CommonBtn from "../components/Common/CommonBtn";
+import { useState } from "react";
 
 const Profile = () => {
+  const [updateNickName, setUpdateNickName] = useState("");
+
+  const handleUpdate = async () => {
+    try {
+      const res = await updateProfile(updateNickName);
+      console.log(res.message);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleChange = (e) => {
+    setUpdateNickName(e.target.value);
+  };
+
   return (
-    <div>
-      Profile
+    <div className="w-full flex flex-col items-center justify-center bg-gray-100">
+      <CommonContainer>
+        <h1 className="text-4xl font-bold mb-6 text-center">프로필 수정</h1>
+        <CommonForm onSubmit={handleUpdate}>
+          <label htmlFor="updateInput">닉네임</label>
+          <CommonInput
+            id="updateInput"
+            type="text"
+            name="nickName"
+            value={updateNickName}
+            placeholder="변경할 닉네임을 입력해 주세요"
+            onChange={handleChange}
+          />
+          <CommonBtn type="submit" content="프로필 업데이트"></CommonBtn>
+        </CommonForm>
+      </CommonContainer>
     </div>
   );
 };
