@@ -3,10 +3,10 @@ import { login } from "../api/auth";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
-import CommonContainer from "../components/Auth/CommonContainer";
-import CommonForm from "../components/Auth/CommonForm";
-import CommonInput from "../components/Auth/CommonInput";
-import CommonBtn from "../components/Auth/CommonBtn";
+import CommonContainer from "../components/Common/CommonContainer";
+import CommonForm from "../components/Common/CommonForm";
+import CommonInput from "../components/Common/CommonInput";
+import CommonBtn from "../components/Common/CommonBtn";
 
 const Login = () => {
   const naigate = useNavigate();
