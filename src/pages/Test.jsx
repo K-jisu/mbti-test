@@ -3,31 +3,12 @@ import { calculateMBTI, mbtiDescriptions } from "../utils/mbtiCalculator";
 import { createTestResult } from "../api/testResults";
 import { useNavigate } from "react-router-dom";
 import TestForm from "../components/Test/TestForm";
-import { useQuery } from "@tanstack/react-query";
-import { getTestResults } from "../api/testResults";
-import { useEffect } from "react";
-import { getUserProfile } from "../api/auth";
+import useUserStore from "../zustand/userStorage";
 
 const Test = () => {
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
-  const [user, setUser] = useState({});
-  const [data, setData] = useState({
-    id: "",
-    nickname: "",
-    result: "",
-    visibility: true,
-    date: "",
-  });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getUserProfile();
-      console.log(data);
-      setUser(data);
-    };
-    fetchData();
-  }, []);
+  const user = useUserStore((state) => state.user);
 
   const handleTestSubmit = async (answers) => {
     const mbtiResult = calculateMBTI(answers);
@@ -39,10 +20,7 @@ const Test = () => {
       visibility: true,
       date: new Date().toISOString().split("T")[0],
     };
-    setData(updatedData);
-    const response = await createTestResult(updatedData);
-    console.log(response);
-
+    await createTestResult(updatedData);
     /* Test 결과는 mbtiResult 라는 변수에 저장이 됩니다. 이 데이터를 어떻게 API 를 이용해 처리 할 지 고민해주세요. */
   };
 

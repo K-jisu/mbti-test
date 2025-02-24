@@ -6,6 +6,20 @@
       "result": "INFP",
       "visibility": true,
       "date": "2025-02-24"
+    },
+    {
+      "id": "test4101",
+      "nickname": "ddd",
+      "result": "ESTJ",
+      "visibility": true,
+      "date": "2025-02-24"
+    },
+    {
+      "id": "test4101",
+      "nickname": "ddd",
+      "result": "INFP",
+      "visibility": true,
+      "date": "2025-02-24"
     }
   ]
 }
