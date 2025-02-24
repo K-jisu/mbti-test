@@ -37,7 +37,6 @@ const ResultList = () => {
     },
   });
 
-
   return (
     <>
       {testResults?.map((result) => {

@@ -4,21 +4,21 @@ import { mbtiDescriptions } from "../../utils/mbtiCalculator";
 const ResultItem = ({ testresult, isOwn, deleteMutate, updateMutate }) => {
   const { nickname, date, result, id, visibility } = testresult;
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg flex flex-col gap-3">
-      <div className="flex flex-row justify-between">
-        <h3 className="text-primary-color">{nickname}</h3>
-        <span>{date}</span>
+    <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-4xl flex flex-col gap-4 hover:shadow-2xl transition-transform transform hover:scale-105">
+      <div className="flex flex-row justify-between items-center">
+        <h3 className="text-blue-600 font-semibold text-lg">{nickname}</h3>
+        <span className="text-gray-500 text-sm">{date}</span>
       </div>
       <div className="flex flex-col gap-2">
-        <h3 className="text-3xl">{result}</h3>
-        <p>
+        <h3 className="text-3xl font-bold text-gray-800">{result}</h3>
+        <p className="text-gray-600">
           {mbtiDescriptions[result] || "해당 성격 유형에 대한 설명이 없습니다."}
         </p>
       </div>
       {isOwn && (
-        <div className="flex gap-3 justify-end">
+        <div className="flex gap-3 justify-end mt-4">
           <button
-            className=" bg-primary-color text-white py-1 px-2 rounded-lg hover:bg-background-color transition duration-300 hover:text-[#FF5A5F]"
+            className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700 hover:shadow-lg transition-transform transform hover:scale-105"
             onClick={() => {
               updateMutate({ id, visibility });
             }}
@@ -26,7 +26,7 @@ const ResultItem = ({ testresult, isOwn, deleteMutate, updateMutate }) => {
             {visibility ? "비공개로 전환" : "공개로 전환"}
           </button>
           <button
-            className=" bg-primary-color text-white py-1 px-2 rounded-lg hover:bg-background-color transition duration-300 hover:text-[#FF5A5F]"
+            className="bg-red-500 text-white py-2 px-4 rounded-lg shadow hover:bg-red-600 hover:shadow-lg transition-transform transform hover:scale-105"
             onClick={() => {
               deleteMutate(id);
             }}

@@ -13,19 +13,28 @@ const AuthHeader = () => {
   };
   return (
     <>
-      <span>{user.nickname}</span>
-      <Link to="/profile" className="text-primary-color hover:text-gray-300 ">
+      <span className="text-gray-700 hover:text-blue-600 transition">{user.nickname}님 환영합니다.</span>
+      <Link
+        to="/profile"
+        className="text-gray-700 hover:text-blue-600 transition "
+      >
         {HeaderConstant.HEADER_PROFILE}
       </Link>
-      <Link to="/test" className="text-primary-color hover:text-gray-300 ">
+      <Link
+        to="/test"
+        className="text-gray-700 hover:text-blue-600 transition "
+      >
         {HeaderConstant.HEADER_TEST}
       </Link>
-      <Link to="/results" className="text-primary-color hover:text-gray-300 ">
+      <Link
+        to="/results"
+        className="text-gray-700 hover:text-blue-600 transition "
+      >
         {HeaderConstant.HEADER_TEST_RESULT}
       </Link>
       <button
         onClick={handleLogout}
-        className="text-primary-color hover:text-gray-300 "
+        className="text-gray-700 hover:text-blue-600 transition "
       >
         {HeaderConstant.HEADER_LOGOUT}
       </button>
