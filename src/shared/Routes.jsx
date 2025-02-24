@@ -8,8 +8,9 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Layout from "./Layout";
+import useUserStore from "../zustand/userStorage";
 
-const isLogin = false;
+// const isAuthenticated = useUserStore(state => state.isAuthenticated)
 
 const routesForNotAuthenticaiedOnly = [
   { path: "/login", element: <Login /> },
@@ -27,20 +28,35 @@ const routesForAuthenticatedOnly = [
   },
 ];
 
-const finalRoutes = [
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      { path: "/", element: <Home /> },
-      ...(!isLogin ? routesForNotAuthenticaiedOnly : []),
-      ...routesForAuthenticatedOnly,
-    ],
-  },
-];
-const router = createBrowserRouter([...finalRoutes]);
+// const finalRoutes = [
+//   {
+//     path: "/",
+//     element: <Layout />,
+//     children: [
+//       { path: "/", element: <Home /> },
+//       ...(!isAuthenticated ? routesForNotAuthenticaiedOnly : []),
+//       ...routesForAuthenticatedOnly,
+//     ],
+//   },
+// ];
+// const router = createBrowserRouter([...finalRoutes]);
 
 const Routes = () => {
+  const isAuthenticated = useUserStore((state) => state.isAuthenticated);
+  console.log(isAuthenticated);
+
+  const finalRoutes = [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        { path: "/", element: <Home /> },
+        ...(!isAuthenticated ? routesForNotAuthenticaiedOnly : []),
+        ...routesForAuthenticatedOnly,
+      ],
+    },
+  ];
+  const router = createBrowserRouter([...finalRoutes]);
   return <RouterProvider router={router} />;
 };
 

@@ -14,7 +14,7 @@ const Test = () => {
     const mbtiResult = calculateMBTI(answers);
     setResult(mbtiResult);
     const updatedData = {
-      id: user.id,
+      userId: user.id,
       nickname: user.nickname,
       result: mbtiResult,
       visibility: true,
