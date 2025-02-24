@@ -8,9 +8,9 @@ const Header = () => {
   const { isAuthenticated } = useUserStore();
 
   return (
-    <header className=" p-4 shadow-md">
+    <header className="sticky top-0 z-50 bg-white shadow-md py-4 px-6 flex items-center justify-between">
       <nav className="container mx-auto flex justify-between items-center text-white">
-        <Link to="/" className="text-primary-color font-semibold">
+        <Link to="/" className="text-2xl font-semibold text-blue-500">
           {HeaderConstant.HEADER_HOME}
         </Link>
         <div className="space-x-4">

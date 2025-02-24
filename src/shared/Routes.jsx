@@ -28,19 +28,6 @@ const routesForAuthenticatedOnly = [
   },
 ];
 
-// const finalRoutes = [
-//   {
-//     path: "/",
-//     element: <Layout />,
-//     children: [
-//       { path: "/", element: <Home /> },
-//       ...(!isAuthenticated ? routesForNotAuthenticaiedOnly : []),
-//       ...routesForAuthenticatedOnly,
-//     ],
-//   },
-// ];
-// const router = createBrowserRouter([...finalRoutes]);
-
 const Routes = () => {
   const isAuthenticated = useUserStore((state) => state.isAuthenticated);
   console.log(isAuthenticated);

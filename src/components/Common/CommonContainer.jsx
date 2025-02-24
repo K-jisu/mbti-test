@@ -1,6 +1,6 @@
 const CommonContainer = ({ children }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
+    <div className="bg-gradient-to-br from-white to-gray-100 shadow-xl rounded-2xl p-10 w-full max-w-lg">
       {children}
     </div>
   );
