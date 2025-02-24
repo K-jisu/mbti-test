@@ -1,11 +1,10 @@
 import React from "react";
-import { useContext } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { AuthContext } from "../../context/AuthProvider";
+import useUserStore from "../../zustand/userStorage";
 
 const ProtectedRoute = () => {
   const { pathname } = useLocation();
-  const {isAuthenticated} = useContext(AuthContext)
+  const { isAuthenticated } = useUserStore();
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace state={{ redirectFrom: pathname }} />;

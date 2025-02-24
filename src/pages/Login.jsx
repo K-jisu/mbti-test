@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { login } from "../api/auth";
+import { getUserProfile, login } from "../api/auth";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthProvider";
 import CommonContainer from "../components/Common/CommonContainer";
 import CommonForm from "../components/Common/CommonForm";
 import CommonInput from "../components/Common/CommonInput";
 import CommonBtn from "../components/Common/CommonBtn";
+import useUserStore from "../zustand/userStorage";
 
 const Login = () => {
   const naigate = useNavigate();
-  const { accessLogin } = useContext(AuthContext);
+  // const { accessLogin } = useContext(AuthContext);
+  const { accessLogin } = useUserStore();
   const [loginData, setLoginData] = useState({
     id: "",
     password: "",
@@ -27,7 +27,8 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const { accessToken } = await login(loginData);
-      accessLogin(accessToken);
+      const { id, nickname } = await getUserProfile(accessToken);
+      accessLogin(accessToken, { id, nickname });
       naigate("/profile");
     } catch (error) {
       console.log("로그인에 실패", error);

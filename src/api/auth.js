@@ -1,6 +1,6 @@
 import api from "./api";
 
-const accessToken = localStorage.getItem("accessToken");
+// const accessToken = localStorage.getItem("accessToken");
 
 export const register = async (userData) => {
   const response = await api.post("/register", userData);
@@ -12,7 +12,7 @@ export const login = async (userData) => {
   return response.data;
 };
 
-export const getUserProfile = async () => {
+export const getUserProfile = async (accessToken) => {
   const response = await api.get("/user", {
     headers: {
       "Content-Type": "application/json",
