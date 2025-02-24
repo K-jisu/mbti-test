@@ -24,6 +24,13 @@ const useUserStore = create(
             isAuthenticated: false,
           });
         },
+
+        checkAuth: () => {
+          const token = useUserStore.getState().accessToken;
+          token
+            ? set({ isAuthenticated: true })
+            : set({ isAuthenticated: false });
+        },
       };
     },
     {
