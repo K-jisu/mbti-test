@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HomeCard from "../components/Home/HomeCard";
 import HomeConstant from "../constant/HomeConstant";
 
@@ -20,12 +21,14 @@ const Home = () => {
           );
         })}
       </div>
-      <button
-        className="inline-block bg-primary-color text-white py-2 px-6 rounded-full hover:bg-background-color transition mb-4 hover:text-[#FF5A5F]"
-        type="button"
-      >
-        {HomeConstant.HOME_BUTTON}
-      </button>
+      <Link to="/test">
+        <button
+          className="inline-block bg-primary-color text-white py-2 px-6 rounded-full hover:bg-background-color transition mb-4 hover:text-[#FF5A5F]"
+          type="button"
+        >
+          {HomeConstant.HOME_BUTTON}
+        </button>
+      </Link>
     </div>
   );
 };

@@ -6,9 +6,9 @@ const useUserStore = create(
     (set) => {
       return {
         user: null,
-        acessToken: null,
+        accessToken: null,
         isAuthenticated: false,
-
+        setUser: (user) => set({ user }),
         accessLogin: (accessToken, user) => {
           set({
             user: user,

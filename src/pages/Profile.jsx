@@ -4,14 +4,21 @@ import CommonForm from "../components/Common/CommonForm";
 import CommonInput from "../components/Common/CommonInput";
 import CommonBtn from "../components/Common/CommonBtn";
 import { useState } from "react";
+import { updateProfile } from "../api/auth";
+import useUserStore from "../zustand/userStorage";
 
 const Profile = () => {
+  const user = useUserStore((state) => state.user);
+  const setUser = useUserStore((state) => state.setUser);
   const [updateNickName, setUpdateNickName] = useState("");
+  const accessToken = useUserStore((state) => state.accessToken);
 
   const handleUpdate = async () => {
     try {
-      const res = await updateProfile(updateNickName);
-      console.log(res.message);
+      const res = await updateProfile({ updateNickName, accessToken });
+      setUser({ ...user, nickname: updateNickName });
+      alert("닉네임 변경이 되었습니다.");
+      console.log(res);
     } catch (error) {
       console.log(error);
     }
