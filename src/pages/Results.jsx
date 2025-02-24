@@ -1,7 +1,5 @@
 import React from "react";
 import ResultList from "../components/Results/ResultList";
-import { useQuery } from "@tanstack/react-query";
-import { getTestResults } from "../api/testResults";
 
 const Results = () => {
   

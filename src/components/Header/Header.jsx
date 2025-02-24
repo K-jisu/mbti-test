@@ -1,12 +1,11 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../context/AuthProvider";
 import HeaderConstant from "../../constant/HeaderConstant";
 import AuthHeader from "./AuthHeader";
 import NotAuthHeader from "./NotAuthHeader";
+import useUserStore from "../../zustand/userStorage";
 
 const Header = () => {
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useUserStore();
 
   return (
     <header className=" p-4 shadow-md">
