@@ -33,7 +33,7 @@ json-server, HTTP Protocol, axios, tanstack query, zustand, tailwind css를 익�
 # 🚨 트러블 슈팅
 
 - [새로고침시 로그인 상태 확인 로직을 어떻게 해야하나?](https://velog.io/@wltn7star/%EC%83%88%EB%A1%9C%EA%B3%A0%EC%B9%A8%EC%8B%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%83%81%ED%83%9C-%ED%99%95%EC%9D%B8-%EB%A1%9C%EC%A7%81%EC%9D%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC%ED%95%98%EB%82%98)
-- [json-server에서 patch로 id값에 해당하는 데이터 수정하기](https://velog.io/@wltn7star/json-server%EC%97%90%EC%84%9C-patch%EB%A1%9C-id%EA%B0%92%EC%97%90-%ED%95%B4%EB%8B%B9%ED%95%98%EB%8A%94-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A0%95%ED%95%98%EA%B8%B0)
+- [json-server에서 사용자 닉네임 업데이트 하는데... 안되네?](https://velog.io/@wltn7star/json-server%EC%97%90%EC%84%9C-patch%EB%A1%9C-id%EA%B0%92%EC%97%90-%ED%95%B4%EB%8B%B9%ED%95%98%EB%8A%94-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A0%95%EC%9D%B4..-%EC%95%88%EB%90%98%EB%84%A4)
 
 # 📸 스크린 샷
 
