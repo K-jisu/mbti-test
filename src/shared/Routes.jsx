@@ -30,7 +30,7 @@ const routesForAuthenticatedOnly = [
 
 const Routes = () => {
   const isAuthenticated = useUserStore((state) => state.isAuthenticated);
-  console.log(isAuthenticated);
+  console.log("1" + isAuthenticated);
 
   const finalRoutes = [
     {

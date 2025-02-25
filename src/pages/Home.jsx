@@ -15,6 +15,7 @@ const Home = () => {
         {HomeConstant.HOME_MBTI_CARD.map((card) => {
           return (
             <HomeCard
+              key={card.MBTI_TEST_TITLE}
               title={card.MBTI_TEST_TITLE}
               content={card.MBTI_TEST_INFO}
             />

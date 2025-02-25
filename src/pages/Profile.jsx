@@ -29,7 +29,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-gray-100">
+    <div className="w-full flex items-center justify-center min-h-screen bg-gray-100">
       <CommonContainer>
         <h1 className="text-4xl font-bold mb-6 text-center">프로필 수정</h1>
         <CommonForm onSubmit={handleUpdate}>

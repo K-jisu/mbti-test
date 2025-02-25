@@ -1,9 +1,8 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/";
 
 const resultAPI = axios.create({
-  baseURL: API_URL,
+  baseURL: import.meta.env.VITE_APP_DB_URL,
 });
 
 export const getTestResults = async () => {
@@ -27,4 +26,3 @@ export const updateTestResultVisibility = async ({ id, visibility }) => {
   });
   return response.data;
 };
-

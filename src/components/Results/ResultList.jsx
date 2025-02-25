@@ -1,41 +1,14 @@
 import React from "react";
 import ResultItem from "./ResultItem";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import {
-  deleteTestResult,
-  getTestResults,
-  updateTestResultVisibility,
-} from "../../api/testResults";
 import useUserStore from "../../zustand/userStorage";
+import useTestResults from "../../hooks/useTestResults";
 
 const ResultList = () => {
   const user = useUserStore((state) => state.user);
-  const queryClient = useQueryClient();
+  const { testResults, deleteMutate, updateMutate } = useTestResults();
 
-  const { data: testResults } = useQuery({
-    queryKey: ["testResults"],
-    queryFn: getTestResults,
-  });
-
-  const { mutate: deleteMutate } = useMutation({
-    mutationFn: deleteTestResult,
-    onSuccess: () => {
-      queryClient.invalidateQueries(["testResults"]);
-    },
-    onError: (error) => {
-      console.log(error);
-    },
-  });
-
-  const { mutate: updateMutate } = useMutation({
-    mutationFn: updateTestResultVisibility,
-    onSuccess: () => {
-      queryClient.invalidateQueries(["testResults"]);
-    },
-    onError: (error) => {
-      console.log(error);
-    },
-  });
+  // Todo
+  // 배포, 환경변수,
 
   return (
     <>
@@ -43,21 +16,16 @@ const ResultList = () => {
         const isOwn = result.userId === user.id;
         if (isOwn) {
           return (
-            <>
-              <ResultItem
-                testresult={result}
-                isOwn={isOwn}
-                deleteMutate={deleteMutate}
-                updateMutate={updateMutate}
-              />
-            </>
+            <ResultItem
+              key={result.id}
+              testresult={result}
+              isOwn={isOwn}
+              deleteMutate={deleteMutate}
+              updateMutate={updateMutate}
+            />
           );
         } else if (result.visibility) {
-          return (
-            <>
-              <ResultItem testresult={result} />
-            </>
-          );
+          return <ResultItem key={result.id} testresult={result} />;
         }
       })}
     </>
