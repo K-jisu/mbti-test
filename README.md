@@ -1,6 +1,6 @@
 # 🎉 MBTI Test
 
-![image](https://github.com/user-attachments/assets/7b3976e7-ba27-436e-a97f-3c5764648e77)
+![image](https://github.com/user-attachments/assets/9e6fdbf3-acab-4ab2-8753-6ec6eee3cc9e)
 
 # 🔖 프로젝트 개요
 
@@ -39,20 +39,39 @@ json-server, HTTP Protocol, axios, tanstack query, zustand, tailwind css를 익�
 
 <details>
   <summary>홈 화면</summary>
-
-![image](https://github.com/user-attachments/assets/7b3976e7-ba27-436e-a97f-3c5764648e77)
-
-</details>
-<details>
-  <summary>도감 화면</summary>
-
-![image](https://github.com/user-attachments/assets/0d7b9271-08a6-4b4d-88d4-1e240a7e6684)
+  
+![image](https://github.com/user-attachments/assets/9b0801c5-985e-447b-a666-377a5924e211)
 
 </details>
 <details>
-  <summary>상세 페이지</summary>
+  <summary>로그인, 회원가입</summary>
 
-![image](https://github.com/user-attachments/assets/2b26992e-7c49-4c49-94cc-b54518c9be29)
+![image](https://github.com/user-attachments/assets/8f292a51-2526-41be-ab73-c39fc690bee9)
+
+![image](https://github.com/user-attachments/assets/91c26c80-3744-4c6a-af32-193ea0cebd0a)
+
+
+</details>
+<details>
+  <summary>프로필 수정</summary>
+
+![image](https://github.com/user-attachments/assets/cc3dfd1b-22e8-41ab-a7b3-48ff67e5dd0a)
+
+
+</details>
+
+<details>
+  <summary>테스트 페이지</summary>
+
+![image](https://github.com/user-attachments/assets/294500ca-ef5e-461f-8b1d-285abd014cae)
+
+</details>
+
+<details>
+  <summary>테스트 결과 페이지</summary>
+
+![image](https://github.com/user-attachments/assets/8dcccb10-d229-4ef5-824c-6e464414d2fa)
+
 
 </details>
 
