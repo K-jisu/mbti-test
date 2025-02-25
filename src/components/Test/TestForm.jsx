@@ -18,7 +18,7 @@ const TestForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 p-6 bg-white rounded-lg">
+    <form onSubmit={handleSubmit} className="w-full max-w-3xl bg-white shadow-lg rounded-2xl p-8">
       {questions.map((q, index) => (
         <div key={q.id} className="mb-6">
           <p className="font-semibold text-lg mb-3">{q.question}</p>
@@ -46,7 +46,7 @@ const TestForm = ({ onSubmit }) => {
       ))}
       <button
         type="submit"
-        className="w-full bg-primary-color text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300 hover:text-[#FF5A5F]"
+        className="w-full bg-blue-600 text-white py-3 px-4 rounded-xl shadow-md hover:bg-blue-700 hover:shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 duration-300"
       >
         제출하기
       </button>

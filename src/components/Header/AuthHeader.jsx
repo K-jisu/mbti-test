@@ -8,12 +8,17 @@ const AuthHeader = () => {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    accessLogout();
-    navigate("/");
+    if (confirm("로그아웃 하시겠습니까?")) {
+      alert("로그아웃 되었습니다.");
+      accessLogout();
+      navigate("/");
+    }
   };
   return (
     <>
-      <span className="text-gray-700 hover:text-blue-600 transition">{user.nickname}님 환영합니다.</span>
+      <span className="text-gray-700 hover:text-blue-600 transition">
+        {user.nickname}님 환영합니다.
+      </span>
       <Link
         to="/profile"
         className="text-gray-700 hover:text-blue-600 transition "

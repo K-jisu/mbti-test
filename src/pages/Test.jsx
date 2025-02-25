@@ -13,6 +13,7 @@ const Test = () => {
   const handleTestSubmit = async (answers) => {
     const mbtiResult = calculateMBTI(answers);
     setResult(mbtiResult);
+
     const updatedData = {
       userId: user.id,
       nickname: user.nickname,
@@ -20,8 +21,8 @@ const Test = () => {
       visibility: true,
       date: new Date().toISOString().split("T")[0],
     };
+
     await createTestResult(updatedData);
-    /* Test 결과는 mbtiResult 라는 변수에 저장이 됩니다. 이 데이터를 어떻게 API 를 이용해 처리 할 지 고민해주세요. */
   };
 
   const handleNavigateToResults = () => {
@@ -29,34 +30,34 @@ const Test = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-white">
-      <div className="bg-white rounded-lg p-8 max-w-lg w-full h-full overflow-y-auto">
-        {!result ? (
-          <>
-            <h1 className="text-3xl font-bold text-primary-color mb-6">
-              MBTI 테스트
-            </h1>
-            <TestForm onSubmit={handleTestSubmit} />
-          </>
-        ) : (
-          <>
-            <h1 className="text-3xl font-bold text-primary-color mb-6">
-              테스트 결과: {result}
-            </h1>
-            <p className="text-lg text-gray-700 mb-6">
-              {mbtiDescriptions[result] ||
-                "해당 성격 유형에 대한 설명이 없습니다."}
-            </p>
-            <button
-              onClick={handleNavigateToResults}
-              className="w-full bg-primary-color text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300 hover:text-[#FF5A5F]"
-            >
-              결과 페이지로 이동하기
-            </button>
-          </>
-        )}
-      </div>
+    // <div className="w-full flex flex-col items-center justify-center bg-white">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-gray-200 p-8">
+      <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 mb-6 tracking-tight drop-shadow-lg">
+        MBTI 테스트
+      </h1>
+      {!result ? (
+        <>
+          <TestForm onSubmit={handleTestSubmit} />
+        </>
+      ) : (
+        <div className="w-full max-w-4xl bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center gap-4">
+          <h2 className="text-3xl font-bold text-gray-800">
+            테스트 결과: {result}
+          </h2>
+          <p className="text-gray-600 text-center">
+            {mbtiDescriptions[result] ||
+              "해당 성격 유형에 대한 설명이 없습니다."}
+          </p>
+          <button
+            onClick={handleNavigateToResults}
+            className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-transform transform hover:scale-105"
+          >
+            결과 페이지로 이동하기
+          </button>
+        </div>
+      )}
     </div>
+    // </div>
   );
 };
 
